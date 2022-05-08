@@ -1,5 +1,7 @@
 # Descriptions
 
+**The program was developed under the Raspberry Pi environment.**
+
 Install the dependencies \
 `python -m pip install --user -r .\requirements\requirements.txt` 
 
