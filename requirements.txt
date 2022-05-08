@@ -1,6 +1,0 @@
-scikit-learn
-librosa
-tensorflow
-pydot
-numpy
-pickle

@@ -1,17 +1,19 @@
 # Descriptions
 Install the dependencies \
-`python install --user -r requirements.txt` 
+`python -m pip install --user -r .\requirements\requirements.txt` 
+
+Data collection (adjust the class that you want to collect inside soundcollection.py) \
+`python .\codes\data-collection\soundcollection.py`
 
 Train the model \
-`python train.py`
+`python .\codes\train\train.py`
 
 Test the model \
-`python test.py`
+`python .\codes\test\test.py`
 
-Test on a real-world scenario \
+Run the program \
 `python app.py`
 
 To change your datasets, you can copy them into the `train` folder. The codes will automatically detect that the folder listed under the `train` folder is your class label.
 
 # Datasets
-You can download the complete dataset <a href="https://github.com/soerenab/AudioMNIST">here</a>. The dataset consists of 30,000 audio samples of spoken digits (0–9) from 60 different speakers.
