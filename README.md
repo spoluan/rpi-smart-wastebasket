@@ -5,6 +5,8 @@
 Install the dependencies \
 `python -m pip install --user -r .\requirements\requirements.txt` 
 
+You will also need to install another dependency in the `.\requirements/installing_pyaudio.txt` file.
+
 Train the model \
 `python .\codes\train\train.py`
 
