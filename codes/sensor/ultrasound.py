@@ -45,7 +45,7 @@ class Ultrasound(object):
         finish = time.time()
         
         pulse_len = finish - start
-        distance_cm = pulse_len * 340 *100 / 2
+        distance_cm = pulse_len * 340 * 100 / 2
         distance_in = distance_cm / 2.5
         
         return distance_cm, distance_in
