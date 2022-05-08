@@ -1,4 +1,4 @@
-# Descriptions]
+# Descriptions
 
 Install the dependencies \
 `python -m pip install --user -r .\requirements\requirements.txt` 
