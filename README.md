@@ -12,7 +12,9 @@ Train the model \
  
 In addition to training the model, melfrequency features will also be extracted into the pickle and saved for later use. In order to avoid re-extraction of features when retraining the model, you may wish to comment off line 54 of the `train.py` file. The process of extracting the features will take time.
 
-image.png
+<p align="center">
+	<img src="img/training.jpg" width="400"/> 
+</p>
   
 # Datasets
 
