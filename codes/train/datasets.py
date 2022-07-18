@@ -8,7 +8,9 @@ Created on Tue Apr 26 09:58:17 2022
 import numpy as np 
 import tensorflow as tf
 import os
-from pickledump import PickleDumpLoad
+from pickledump import PickleDumpLoad 
+import random
+from sklearn.utils import shuffle 
 
 class Datasets(object): 
 
@@ -17,9 +19,9 @@ class Datasets(object):
 
     def get_data_paths(self, PATH):  
         x_label, x_path = [], []
-        for label in sorted(os.listdir(PATH))[:10]:
+        for label in sorted(os.listdir(PATH))[:]:
             if '.txt' not in label:
-                for path in os.listdir(os.path.join(PATH, label))[:50]:
+                for path in os.listdir(os.path.join(PATH, label))[:]:
                     x_path.append(os.path.join(PATH, label, path))
                     x_label.append(label)
 
@@ -28,7 +30,8 @@ class Datasets(object):
 
         # Prepare the label for training
         x_label = [list(map(lambda x: int(x) - 1, x_label))]
-
+         
+        # x_label, x_path = shuffle(x_label[0], x_path) 
         return x_path, x_label 
 
     def save_label_as_model(self, x_label):

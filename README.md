@@ -9,13 +9,11 @@ You will also need to install another dependency in the `.\requirements/installi
 
 Train the model \
 `python .\codes\train\train.py`
+ 
+In addition to training the model, melfrequency features will also be extracted into the pickle and saved for later use. In order to avoid re-extraction of features when retraining the model, you may wish to comment off line 54 of the `train.py` file. The process of extracting the features will take time.
 
-Test the model \
-`python .\codes\test\test.py`
-
-Run the program \
-`python app.py`
-
+image.png
+  
 # Datasets
 
 Data collection (adjust the class that you want to collect inside soundcollection.py) \
