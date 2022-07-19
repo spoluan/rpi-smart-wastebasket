@@ -18,6 +18,7 @@ In addition to training the model, melfrequency features will also be extracted 
 
 The folder model contains a saved model. The following command can be executed to test the model with the available testing data.
 
+Test the model \
 `python .\codes\test\test.py`
 
 <p align="center">
