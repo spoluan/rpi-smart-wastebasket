@@ -15,7 +15,15 @@ In addition to training the model, melfrequency features will also be extracted 
 <p align="center">
 	<img src="img/training.jpg" width="800"/> 
 </p>
-  
+
+The folder model contains a saved model. The following command can be executed to test the model with the available testing data.
+
+`python .\codes\test\test.py`
+
+<p align="center">
+	<img src="img/testing.jpg" width="800"/> 
+</p>
+
 # Datasets
 
 Data collection (adjust the class that you want to collect inside soundcollection.py) \
