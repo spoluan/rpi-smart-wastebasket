@@ -21,7 +21,7 @@ class ModelTest(object):
 
         # Load the saved model
         print('Load the model...')
-        MODEL_SAVED_PATH = "./model/weights-improvement-29-0.0382-bigger.hdf5" 
+        MODEL_SAVED_PATH = "./model/weights-improvement-18-0.0735-bigger.hdf5" 
         self.model = self.define_model(CLASSES=4, INPUT_SHAPE=[50, 30])  
         self.model.load_weights(MODEL_SAVED_PATH)   
 
