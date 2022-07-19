@@ -13,8 +13,7 @@ import os
 
 class ModelTrain(object):
 
-    def __init__(self): 
-        self.MODEL_SAVED_PATH = "./model/model.h5" 
+    def __init__(self):  
         self.EPOCHS = 100000
         self.BATCH_SIZE = 32
         self.train_without_generator = DataWithoutGenerator()
@@ -51,7 +50,7 @@ class ModelTrain(object):
     def train(self):
         
         # UNCOMMENT TO REGENERATE AND SAVE THE NEW DATASETS
-        self.train_without_generator.main()
+        # self.train_without_generator.main()
            
         x_train, y_train = self.train_without_generator.data_load(file_name='train.pickle')
         x_test, y_test = self.train_without_generator.data_load(file_name='test.pickle')
@@ -71,7 +70,7 @@ class ModelTrain(object):
             batch_size=self.BATCH_SIZE,
             validation_data=(x_test, y_test),
             callbacks=callbacks_list,
-        ) 
+        )
   
 if __name__ == '__main__':
     app = ModelTrain()

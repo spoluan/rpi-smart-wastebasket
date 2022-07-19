@@ -25,11 +25,11 @@ class App(object):
         # self.ultrasound_two.start()
     
         # Initialize the model 
-        self.test = ModelTest()  
+        self.test = ModelTest()
         
         # Initialize the sound recorder 
         self.soundrecorder = AudioRecording()
-        self.soundrecorder.start() 
+        self.soundrecorder.start()
 
     def main(self):
          
@@ -48,14 +48,14 @@ class App(object):
                 
                 # Recording 
                 frames = self.soundrecorder.record()
-                self.soundrecorder.save(frames) 
+                self.soundrecorder.save(frames)
                 
                 # Make a prediction 
                 sound_path = './datasets/dev-test/recorded_file.wav' 
-                pred = self.test.predict(sound_path) 
+                pred = self.test.predict(sound_path)
                 print(f'Predicted result ({sound_path}):', pred)
                 
-                time.sleep(1) 
+                time.sleep(1)
                 
             # print('Ultrasound one', distance_cm_one, 'cm', distance_in_one, 'inch')
             # print('Ultrasound two', distance_cm_two, 'cm', distance_in_two, 'inch')
