@@ -34,7 +34,7 @@ class DataWithoutGenerator(tf.keras.utils.Sequence):
             
             print(f'Process {index + 1} from {len(x_paths)}')
             
-            time_series_x, sampling_rate = librosa.load(path, sr=None)
+            time_series_x, sampling_rate = librosa.load(path, sr=32000, mono=True)
     
             # Extract mfcc
             mfccs = librosa.feature.mfcc(time_series_x, sr=sampling_rate, n_mfcc=30)

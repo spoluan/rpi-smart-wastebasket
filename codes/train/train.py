@@ -50,7 +50,7 @@ class ModelTrain(object):
     def train(self):
         
         # UNCOMMENT TO REGENERATE AND SAVE THE NEW DATASETS
-        # self.train_without_generator.main()
+        self.train_without_generator.main()
            
         x_train, y_train = self.train_without_generator.data_load(file_name='train.pickle')
         x_test, y_test = self.train_without_generator.data_load(file_name='test.pickle')

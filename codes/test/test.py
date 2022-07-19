@@ -21,7 +21,7 @@ class ModelTest(object):
 
         # Load the saved model
         print('Load the model...')
-        MODEL_SAVED_PATH = "./model/weights-improvement-84-0.0235-bigger.hdf5" 
+        MODEL_SAVED_PATH = "./model/weights-improvement-29-0.0382-bigger.hdf5" 
         self.model = self.define_model(CLASSES=4, INPUT_SHAPE=[50, 30])  
         self.model.load_weights(MODEL_SAVED_PATH)   
 
@@ -35,37 +35,33 @@ class ModelTest(object):
         m = tf.keras.layers.Conv1D(64, 3, activation='relu')(input)
         m = tf.keras.layers.Conv1D(32, 3, activation='relu')(m) 
         m = tf.keras.layers.MaxPooling1D()(m)    
-        
         m = tf.keras.layers.Conv1D(64, 3, activation='relu')(m)
         m = tf.keras.layers.Conv1D(32, 3, activation='relu')(m) 
         m = tf.keras.layers.MaxPooling1D()(m) 
-        
         m = tf.keras.layers.LSTM(128, return_sequences=True)(m)  
         m = tf.keras.layers.LSTM(128, return_sequences=False)(m)  
-        
         m = tf.keras.layers.Dense(128, activation='relu')(m)   
         m = tf.keras.layers.Dropout(0.25)(m)
         m = tf.keras.layers.Flatten()(m)  
         m = tf.keras.layers.BatchNormalization()(m)
-        
         m = tf.keras.layers.Dense(128, activation='relu', name='dense_1')(m)   
         m = tf.keras.layers.Dense(CLASSES, activation='softmax', name="predicting")(m)  
-        
         model = tf.keras.Model(input, m)  
+        model.summary() 
+        # tf.keras.utils.plot_model(model) 
+
         model.compile(
             optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001), 
             loss=tf.keras.losses.CategoricalCrossentropy(),
             metrics=['mse', 'accuracy'],
         )
-        
-        model.summary()
 
         return model  
   
     def load_sound(self, path):
 
-        time_series_x, sampling_rate = librosa.load(path, sr=32000, mono=True) 
- 
+        time_series_x, sampling_rate = librosa.load(path, sr=32000, mono=True)
+    
         # Extract mfcc
         mfccs = librosa.feature.mfcc(time_series_x, sr=sampling_rate, n_mfcc=30)
  
