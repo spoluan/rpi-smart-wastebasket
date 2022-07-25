@@ -25,7 +25,7 @@ Test the model \
 	<img src="img/testing.jpg" width="500"/> 
 </p>
 
-<video src="video/b916f5e5-2caf-4fd7-bd3c-38fa56654bee.mp4" height="845"></video>
+[![Watch the video]](https://github.com/spoluan/rpi-smart-wastebasket/blob/final/video/b916f5e5-2caf-4fd7-bd3c-38fa56654bee.mp4)
 
 # Datasets
 
