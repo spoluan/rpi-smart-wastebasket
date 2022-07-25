@@ -1,4 +1,10 @@
-#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun May  8 16:47:55 2022
+
+@author: SAM; ERICK HUAN;
+"""
+
 import RPi.GPIO as GPIO
 import pigpio
 import time
