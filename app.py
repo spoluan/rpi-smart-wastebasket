@@ -5,28 +5,20 @@ Created on Thu May 21 20:47:53 2020
 @author: SEVENDI ELDRIGE RIFKI POLUAN; ERICK HUANG;
 """
 
-import socket
-import pickle
-from keras.models import load_model
 import rpi_send
 import random
-import pyaudio,wave
-import time 
-import librosa
-import numpy as np
-from keras.models import load_model
-import os
-import threading
 from codes.sensor.soundrecorder import AudioRecording
 from codes.sensor.ultrasound import Ultrasound 
 from codes.test.test import ModelTest
 import time
 import codes.sensor.servotest
+import socket
+import threading
 
 HOST = '192.168.1.100'
 PORT = 50
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#client.connect((HOST, PORT))
+# client.connect((HOST, PORT))
 
 class App(object):
     
@@ -73,7 +65,7 @@ class App(object):
             distance_cm_two, distance_in_two = self.ultrasound_two.get_dis() # > 50 cm default
             
             if distance_cm_one < 40 or distance_cm_two < 40:
-                #servotest.rotate(0)
+                # servotest.rotate(0)
             
                 print('There is a trash!!!!!!!!!')
 
@@ -94,25 +86,25 @@ class App(object):
                 if str_id_x == '3':
                     print('result:','foilpack')
                     servotest.rotate(1)
-                    foilpack -= random.randint(10,15)
+                    foilpack -= random.randint(10, 15) # FOR SIMULATION ONLY
                     rpi_send.senddata(self.percentage, self.paper, self.bottle,self.can, self.foil_pack)
                     
                 elif str_id_x == '2':
                     print('result:','can')
                     servotest.rotate(2)
-                    can -= random.randint(10,15)
+                    can -= random.randint(10, 15) # FOR SIMULATION ONLY
                     rpi_send.senddata(self.percentage, self.paper, self.bottle, self.can, self.foil_pack)
                 
                 elif str_id_x == '1':
                     print('result:', 'bottle')
                     servotest.rotate(0)
-                    can -= random.randint(15,25)
+                    can -= random.randint(15, 25) # FOR SIMULATION ONLY
                     rpi_send.senddata(self.percentage, self.paper, self.bottle, self.can, self.foil_pack)
                      
                 elif str_id_x == '4':
                     print('result:','paper')
                     servotest.rotate(3)
-                    paper -= random.randint(10,15)
+                    paper -= random.randint(10, 15) # FOR SIMULATION ONLY
                     rpi_send.senddata(self.percentage, self.paper, self.bottle, self.can, self.foil_pack)               
                     
                 time.sleep(1)
