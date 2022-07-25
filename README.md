@@ -28,5 +28,5 @@ Test the model \
 # Datasets
 
 Data collection (adjust the class that you want to collect inside soundcollection.py) \
-`python .\codes\data-collection\soundcollection.py`
+`python ./soundcollection.py`
 
