@@ -16,13 +16,13 @@ class App(object):
 
     def __init__(self):
 
-        # Initialize ultrasond pin 23
-        self.ultrasound_one = Ultrasound(trigger_pin=23, echo_pin=24) 
+        # Initialize ultrasond pin 
+        self.ultrasound_one = Ultrasound(trigger_pin=26, echo_pin=19) 
         self.ultrasound_one.start()
         
-        # Initialize ultrasond pin 23
-        # self.ultrasound_two = Ultrasound(trigger_pin=23, echo_pin=24)
-        # self.ultrasound_two.start() 
+        # Initialize ultrasond pin 
+        self.ultrasound_two = Ultrasound(trigger_pin=6, echo_pin=13)
+        self.ultrasound_two.start() 
         
         # Initialize the sound recorder 
         self.soundrecorder = AudioRecording()
@@ -40,9 +40,9 @@ class App(object):
 
             # Maintain the ultrasound sensor
             distance_cm_one, distance_in_one = self.ultrasound_one.get_dis() # > 40 | 50 cm default
-            # distance_cm_two, distance_in_two = self.ultrasound_two.get_dis() # > 40 | 50 cm default
+            distance_cm_two, distance_in_two = self.ultrasound_two.get_dis() # > 40 | 50 cm default
             
-            if distance_cm_one < 40: # or distance_cm_two < 40:
+            if distance_cm_one < 40 or distance_cm_two < 40:
             
                 print('There is a trash!')
                 print('Ultrasound one', distance_cm_one, 'cm')
@@ -50,7 +50,7 @@ class App(object):
                 # Recording 
                 frames = self.soundrecorder.record()
                 file_name = len(os.listdir(f'./datasets/{self.status}/{self.class_name}/'))
-                self.soundrecorder.OUTPUT = f'./datasets/{self.status}/{self.class_name}/{file_name}.wav'
+                self.soundrecorder.OUTPUT = f'./datasets/{self.status}/{self.class_name}/{self.class_name}{file_name}.wav'
                 self.soundrecorder.save(frames) 
                 
                 time.sleep(1) 

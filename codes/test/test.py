@@ -8,7 +8,7 @@ Created on Tue Apr 26 20:48:49 2022
 import librosa 
 import numpy as np
 import tensorflow as tf
-from pickledump import PickleDumpLoad
+from codes.test.pickledump import PickleDumpLoad
 import os 
 from warnings import simplefilter  
 simplefilter(action='ignore', category=FutureWarning)
@@ -21,7 +21,7 @@ class ModelTest(object):
 
         # Load the saved model
         print('Load the model...')
-        MODEL_SAVED_PATH = "./model/weights-improvement-60-0.0184-bigger.hdf5" 
+        MODEL_SAVED_PATH = "./model/weights-improvement-06-0.1262-bigger.hdf5" 
         self.model = self.define_model(CLASSES=4, INPUT_SHAPE=[50, 30])  
         self.model.load_weights(MODEL_SAVED_PATH)   
 
@@ -113,7 +113,7 @@ class ModelTest(object):
                 # Make a prediction
                 result = self.predict(path)
                   
-                if int(result) == int(root.split("\\")[-1]): 
+                if int(result) == int(root.split("/")[-1]): 
                     results.append(1)
                 else:
                     results.append(0)
