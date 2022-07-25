@@ -2,7 +2,7 @@
 """
 Created on Sun May  8 16:47:55 2022
 
-@author: SAM; ERICK HUAN;
+@author: SAM; ERICK HUANG;
 """
 
 import RPi.GPIO as GPIO
