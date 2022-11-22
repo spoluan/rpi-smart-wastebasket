@@ -1,3 +1,18 @@
+# Project info
+
+This program was developed for a smart basket that runs on a Raspberry Pi. It is built to participate in the GPM's 11th National College AI Intelligent Automation Equipment Creation Award competition. Among 67 participants, we rank in the **top 21**. These are the details for the final announcement for all the projects that have been accepted **(our team is listed under project number 12)**.
+
+
+<p align="center">
+	<img src="img/messageImage_1669124880561.jpg" width="800"/> 
+</p>
+
+The following is a poster that we provided for this project. 
+
+<p align="center">
+	<img src="img/智慧垃圾桶海報.png" width="800"/> 
+</p>  
+
 # Descriptions
 
 **The program was developed under the Raspberry Pi environment.**
